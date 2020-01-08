@@ -18,6 +18,8 @@ public class Main {
             System.out.println();
             lines.add(line);
         }
+        System.out.println();
+        System.out.println();
         System.out.println("Result : ");
         List<Integer> result = generateRandomLine();
         printLine(result);
@@ -83,8 +85,7 @@ public class Main {
             }
         }
         if (!matches.isEmpty()) {
-            System.out.println(matches.size() + " Matched for " + userLine.toString());
-            System.out.println("Matches : " + matches.toString());
+            System.out.println(matches.size() + " Matched for " + userLine.toString() + ". Matches : " + matches.toString());
         } else {
             System.out.println("Nothing Matched for : " + userLine.toString());
         }
