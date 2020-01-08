@@ -9,6 +9,12 @@ public class Main {
     public static int MAX_NUMBER_OF_LINES = 10;
 
     public static void main(String[] args) {
+        // Some basic error checking, since we generate random numbers we will be waiting a long time to generate the same numbers twice
+        if(!isValidParams()){
+            System.out.println("Params are not valid");
+            return;
+        }
+
 //        List<Integer> line = readLineFromUser();
         List<List<Integer>> lines = new ArrayList<>();
         while (lines.size() < MAX_NUMBER_OF_LINES) {
@@ -89,5 +95,10 @@ public class Main {
         } else {
             System.out.println("Nothing Matched for : " + userLine.toString());
         }
+    }
+
+    public static boolean isValidParams(){
+        // 10 is just a random buffer to prevent any weird issues
+        return (NUMBERS_IN_LINE + 10 < MAX_VALUE) && (MAX_VALUE - MIN_VALUE > NUMBERS_IN_LINE + 10);
     }
 }
